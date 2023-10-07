@@ -134,19 +134,26 @@
 								</div>
 							</div>
 							<a
-								href="#"
+								href="https://tailspark.co/templates"
+								target="_blank"
 								class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
 								>Templates</a
 							>
 							<a
-								href="#"
+								href="https://tailwind-css-template-neo.vercel.app/Landing%20Pricing"
 								class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
 								>Pricing</a
 							>
 							<a
-								href="#"
+								href="https://tailwind-css-template-neo.vercel.app/Landing%20Blog"
 								class="font-inter rounded-lg pb-8 hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
-								>FAQs</a
+								>Blog</a
+							>
+
+							<a
+								href="https://tailwind-css-template-neo.vercel.app/Landing%20About"
+								class="font-inter rounded-lg pb-8 hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
+								>About</a
 							>
 						</div>
 						<!-- MENU CONTENT 2 -->
@@ -155,10 +162,10 @@
 							x-bind:class="isOpen ? 'show' : 'hidden'"
 						>
 							<a
-								href="https://build.flowspark.co/template"
+								href="https://flowspark.co/design"
 								target="_blank"
 								class="inline-block rounded-full bg-white px-5 py-3 text-center font-bold text-black transition hover:border-black hover:bg-[#c9fd02]"
-								>Get Started</a
+								>Get Custom Designs</a
 							>
 						</div>
 						<!-- BURGER MENU -->

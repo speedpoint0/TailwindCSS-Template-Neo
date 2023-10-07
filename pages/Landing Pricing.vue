@@ -1,10 +1,8 @@
 <template>
 	<div class="overflow-hidden">
-		<!-- Navbar Dropdown 2 rows -->
+		<!-- Navbar Dropdown 1 row -->
 		<section>
-			<div
-				class="h-auto w-screen bg-[#020d24] py-2 text-white [border-bottom:1px_solid_rgb(91,_103,_130)]"
-			>
+			<div class="h-auto w-screen bg-black text-white">
 				<!-- NAVBAR -->
 				<nav
 					class="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0"
@@ -14,43 +12,149 @@
 					<div
 						class="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20"
 					>
-						<!-- LOGO - YOU CAN REPLACE THIS -->
+						<!-- SVG LOGO - YOU CAN REPLACE THIS -->
 						<a href="#">
 							<img
-								src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f03f3e434e2326e8af190_%5BA%5D--Navbar%20Brand%20(1).png"
+								src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26c_%5BA%5D--Navbar%20Brand.png"
 								alt=""
-								class="inline-block max-h-6 max-w-full"
+								class="inline-block max-h-6"
 							/>
 						</a>
-						<!-- MENU CONTENT 2 -->
+						<!-- MENU CONTENT 1 -->
 						<div
-							class="mt-10 flex flex-col items-start space-y-8 lg:mt-0 lg:flex lg:flex-row lg:items-center lg:space-x-3 lg:space-y-0"
+							class="mt-14 flex flex-col space-y-8 lg:mt-0 lg:flex lg:flex-row lg:space-x-1 lg:space-y-0"
 							x-bind:class="isOpen ? 'show' : 'hidden'"
 						>
-							<a
-								href="https://tailwind-css-template-quantum-e4heex93y-flowsparks-projects.vercel.app/"
-								class="px-5 py-2 font-semibold text-[#5b6782] transition hover:text-white max-[991px]:block md:px-10 lg:px-4"
-								>Home</a
-							>
-							<a
-								href="https://tailwind-css-template-quantum-e4heex93y-flowsparks-projects.vercel.app/Landing%20Pricing"
-								class="px-5 py-2 font-semibold text-[#5b6782] transition hover:text-white max-[991px]:block md:px-10 lg:px-4"
-								>Pricing</a
-							>
-							<a
-								href="https://tailwind-css-template-quantum-e4heex93y-flowsparks-projects.vercel.app/Landing%20Blog"
-								class="px-5 py-2 font-semibold text-[#5b6782] transition hover:text-white max-[991px]:block md:px-10 lg:px-4"
-								>Blog</a
-							>
+							<!-- DROPDOWN -->
+							<div class="relative flex flex-col">
+								<a
+									x-on:click.prevent="menuOne = !menuOne"
+									href="#"
+									class="flex flex-row rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
+									x-bind:class="menuOne ? ' text-[#c9fd02] ' : 'text-white  ' "
+									>Component
+									<svg
+										x-bind:class="menuOne ? 'rotate-180' : 'rotate-0' "
+										class="fill-current transition"
+										style="width: 24px; height: 24px"
+										viewBox="0 0 24 24"
+									>
+										<path
+											d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+										/>
+									</svg>
+								</a>
+								<!-- DROP DOWN MENU ONE -->
+								<div
+									class="lg:px-75 z-50 flex w-full flex-col rounded-lg bg-[#181818] px-5 py-5 lg:absolute lg:top-20 lg:w-[800px] lg:flex-row lg:flex-wrap lg:py-7 lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)] xl:w-[950px]"
+									x-show="menuOne"
+									x-on:click.outside="menuOne = false"
+								>
+									<!-- ITEM -->
+									<a
+										class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
+										href="#"
+									>
+										<!-- ICON -->
+										<div class="relative">
+											<img
+												class="w-[40px]"
+												src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+												alt=""
+											/>
+										</div>
+										<!-- TEXT -->
+										<h2 class="font-inter mb-1 mt-5 text-lg font-medium">
+											Analytics
+										</h2>
+										<p
+											class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+										>
+											Get a better understanding of where your traffic is coming
+											from
+										</p>
+									</a>
+									<!-- ITEM -->
+									<a
+										class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
+										href="#"
+									>
+										<!-- ICON -->
+										<div class="relative">
+											<img
+												class="w-[40px]"
+												src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+												alt=""
+											/>
+										</div>
+										<!-- TEXT -->
+										<h2 class="font-inter mb-1 mt-5 text-lg font-medium">
+											Engagement
+										</h2>
+										<p
+											class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+										>
+											Speak directly to your customers in a more meaningful way
+										</p>
+									</a>
+									<!-- ITEM -->
+									<a
+										class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
+										href="#"
+									>
+										<!-- ICON -->
+										<div class="relative">
+											<img
+												class="w-[40px]"
+												src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+												alt=""
+											/>
+										</div>
+										<!-- TEXT -->
+										<h2 class="font-inter mb-1 mt-5 text-lg font-medium">
+											Automations
+										</h2>
+										<p
+											class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+										>
+											Build strategic funnels that will drive your customers to
+											convert
+										</p>
+									</a>
+								</div>
+							</div>
 							<a
 								href="https://tailspark.co/templates"
 								target="_blank"
-								class="px-5 py-2 font-semibold text-[#5b6782] transition hover:text-white max-[991px]:block md:px-10 lg:px-4"
+								class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
 								>Templates</a
 							>
 							<a
-								href="https://flowspark.co/designs"
-								class="2 ml-5 rounded-full bg-[#081631] px-6 py-4 text-center font-semibold text-white transition hover:bg-[#2d6ae0] md:ml-10 lg:ml-4"
+								href="https://tailwind-css-template-neo.vercel.app/Landing%20Pricing"
+								class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
+								>Pricing</a
+							>
+							<a
+								href="https://tailwind-css-template-neo.vercel.app/Landing%20Blog"
+								class="font-inter rounded-lg pb-8 hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
+								>Blog</a
+							>
+
+							<a
+								href="https://tailwind-css-template-neo.vercel.app/Landing%20About"
+								class="font-inter rounded-lg pb-8 hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
+								>About</a
+							>
+						</div>
+						<!-- MENU CONTENT 2 -->
+						<div
+							class="flex flex-col space-y-8 lg:flex lg:flex-row lg:space-x-3 lg:space-y-0"
+							x-bind:class="isOpen ? 'show' : 'hidden'"
+						>
+							<a
+								href="https://flowspark.co/design"
+								target="_blank"
+								class="inline-block rounded-full bg-white px-5 py-3 text-center font-bold text-black transition hover:border-black hover:bg-[#c9fd02]"
 								>Get Custom Designs</a
 							>
 						</div>
@@ -86,797 +190,571 @@
 			</div>
 		</section>
 
-		<section
-			class="bg-[#020d24] bg-cover bg-center bg-no-repeat text-white"
-			style="
-				background-image: url('https://assets.website-files.com/6502af467b2a8c4ee8159a5b/6502af467b2a8c4ee8159a77_Group%2047929.svg');
-			"
-		>
+		<!-- Pricing -->
+		<section class="relative">
+			<img
+				src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fa_Get%20Started%20BG.svg"
+				alt=""
+				class="absolute -z-[1] h-full w-full object-cover"
+			/>
 			<!-- Container -->
 			<div
 				class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32"
 			>
 				<!-- Component -->
 				<div class="flex flex-col items-center justify-start">
-					<!-- Heading -->
-					<div
-						class="mx-auto mb-8 flex max-w-3xl flex-col items-center md:mb-12 lg:mb-16"
-					>
-						<h2 class="text-3xl font-bold md:text-5xl">
-							Simple &amp; Fixed Pricing
-						</h2>
-					</div>
-					<!-- Pricing Cards -->
-					<div
-						class="grid w-full grid-cols-1 gap-16 md:grid-cols-3 md:gap-4 lg:gap-8"
-					>
-						<div class="mx-auto flex w-full max-w-[416px] flex-col">
-							<div
-								class="flex w-full flex-col items-start rounded-xl bg-[#07132d] p-10"
-							>
-								<div class="mb-4 rounded-lg bg-[#0a1836] px-4 py-1.5">
-									<p class="text-sm font-bold text-white">Free Plan</p>
-								</div>
-								<h2 class="mb-5 text-3xl font-bold md:mb-6 md:text-5xl lg:mb-8">
-									$99<span class="text-sm font-light">/year</span>
-								</h2>
-								<p class="mb-5 text-[#7c8aaa] md:mb-6 lg:mb-8">
-									Lorem ipsum dolor sit amet consectetur adipiscing elit ut
-									aliquam, purus sit
-								</p>
-								<a
-									href="#"
-									class="w-full rounded-full bg-[#2d6ae0] px-6 py-4 text-center font-semibold text-white"
-									>Get started</a
-								>
-							</div>
-							<div class="mt-10 flex flex-col items-start gap-5">
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white">Premium Component </span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white"
-											>Exclusive Freebies
-										</span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white"
-											>Monthly Free Exclusive
-										</span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white">Customer Support </span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="mx-auto flex w-full max-w-[416px] flex-col">
-							<div
-								class="flex flex-col items-start rounded-xl bg-[#2d6ae0] bg-cover bg-center bg-no-repeat p-10 text-white"
-								style="
-									background-image: url('https://assets.website-files.com/6502af467b2a8c4ee8159a5b/6502af467b2a8c4ee8159a8b_Mask%20group.svg');
-								"
-							>
-								<div class="mb-4 flex flex-row flex-wrap gap-4">
-									<div class="rounded-lg bg-[#4782f3] px-4 py-1.5">
-										<p class="text-sm font-bold text-white">Growth</p>
-									</div>
-									<div
-										class="flex items-center gap-1.5 rounded-lg bg-[#aca18a] px-4 py-1.5 text-white"
-									>
-										<div class="flex">
-											<svg
-												width="17"
-												height="16"
-												viewBox="0 0 17 16"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<path
-													d="M15.2528 4.59353C15.1098 4.47414 14.9361 4.39736 14.7515 4.37194C14.567 4.34652 14.379 4.37349 14.2091 4.44977L11.0466 5.85602L9.20905 2.54353C9.12123 2.38887 8.99398 2.26026 8.84028 2.17079C8.68657 2.08132 8.5119 2.03418 8.33405 2.03418C8.1562 2.03418 7.98153 2.08132 7.82783 2.17079C7.67412 2.26026 7.54688 2.38887 7.45905 2.54353L5.62155 5.85602L2.45905 4.44977C2.28874 4.37361 2.10052 4.3466 1.91567 4.37181C1.73081 4.39701 1.5567 4.47343 1.413 4.59242C1.2693 4.71141 1.16176 4.86822 1.10252 5.04513C1.04329 5.22205 1.03473 5.412 1.0778 5.59353L2.6653 12.3623C2.69566 12.4933 2.7523 12.6168 2.8318 12.7253C2.9113 12.8338 3.012 12.9251 3.1278 12.9935C3.28458 13.0874 3.46383 13.137 3.64655 13.1373C3.73537 13.1371 3.82373 13.1245 3.90905 13.0998C6.80269 12.2998 9.85916 12.2998 12.7528 13.0998C13.017 13.1692 13.298 13.131 13.5341 12.9935C13.6506 12.926 13.7518 12.835 13.8314 12.7263C13.911 12.6177 13.9672 12.4937 13.9966 12.3623L15.5903 5.59353C15.6329 5.41195 15.6239 5.22208 15.5642 5.04537C15.5046 4.86866 15.3967 4.71215 15.2528 4.59353V4.59353Z"
-													fill="currentColor"
-												></path>
-											</svg>
-										</div>
-										<p class="text-sm font-bold text-white">Popular</p>
-									</div>
-								</div>
-								<h2 class="mb-5 text-3xl font-bold md:mb-6 md:text-5xl lg:mb-8">
-									$149<span class="text-sm font-light">/year</span>
-								</h2>
-								<p class="mb-5 text-[#c0d6ff] md:mb-6 lg:mb-8">
-									Lorem ipsum dolor sit amet consectetur adipiscing elit ut
-									aliquam, purus sit
-								</p>
-								<a
-									href="#"
-									class="w-full rounded-full bg-white px-6 py-4 text-center font-semibold text-[#2d6ae0]"
-									>Get started</a
-								>
-							</div>
-							<div class="mt-10 flex flex-col items-start gap-5">
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white">Premium Component </span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white"
-											>Exclusive Freebies
-										</span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white"
-											>Monthly Free Exclusive
-										</span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white">Customer Support </span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="mx-auto flex w-full max-w-[416px] flex-col">
-							<div
-								class="flex w-full flex-col items-start rounded-xl bg-[#07132d] p-10"
-							>
-								<div class="mb-4 rounded-lg bg-[#0a1836] px-4 py-1.5">
-									<p class="text-sm font-bold text-white">Accelerate</p>
-								</div>
-								<h2 class="mb-5 text-3xl font-bold md:mb-6 md:text-5xl lg:mb-8">
-									$249<span class="text-sm font-light">/year</span>
-								</h2>
-								<p class="mb-5 text-[#7c8aaa] md:mb-6 lg:mb-8">
-									Lorem ipsum dolor sit amet consectetur adipiscing elit ut
-									aliquam, purus sit
-								</p>
-								<a
-									href="#"
-									class="w-full rounded-full bg-[#2d6ae0] px-6 py-4 text-center font-semibold text-white"
-									>Get started</a
-								>
-							</div>
-							<div class="mt-10 flex flex-col items-start gap-5">
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white">Premium Component </span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white"
-											>Exclusive Freebies
-										</span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white"
-											>Monthly Free Exclusive
-										</span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-								<div class="flex flex-row items-start text-white">
-									<div class="mr-2 flex text-[#2d6ae0]">
-										<svg
-											width="32"
-											height="32"
-											viewBox="0 0 32 32"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M8.82291 15.198C8.47774 15.199 8.1399 15.3027 7.84846 15.4969C7.55703 15.6911 7.32392 15.968 7.1761 16.2955C7.02829 16.623 6.9718 16.9878 7.01319 17.3476C7.05457 17.7074 7.19213 18.0476 7.40995 18.3287L12.0534 24.3014C12.219 24.5172 12.4312 24.6885 12.6725 24.8009C12.9137 24.9134 13.177 24.9638 13.4406 24.9479C14.0042 24.9161 14.513 24.5995 14.8375 24.079L24.4831 7.76799C24.4847 7.76528 24.4863 7.76257 24.488 7.75991C24.5785 7.614 24.5492 7.32485 24.3624 7.1432C24.3111 7.09331 24.2506 7.05499 24.1846 7.03058C24.1186 7.00618 24.0486 6.99621 23.9789 7.00129C23.9091 7.00637 23.8411 7.02639 23.7789 7.06013C23.7168 7.09386 23.662 7.14059 23.6177 7.19743C23.6142 7.2019 23.6107 7.2063 23.607 7.21064L13.8792 18.7511C13.8422 18.795 13.7973 18.8308 13.747 18.8563C13.6967 18.8818 13.6421 18.8966 13.5863 18.8998C13.5305 18.9029 13.4747 18.8944 13.4221 18.8747C13.3695 18.8551 13.3211 18.8246 13.2798 18.7852L10.0513 15.7003C9.71603 15.3776 9.27778 15.1984 8.82291 15.198Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<p class="text-[#7c8aaa]">
-										<span class="font-bold text-white">Customer Support </span>
-										Lorem ipsum dolor sit amet consecteur adipiscing.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="bg-[#020d24] text-white">
-			<!-- Container -->
-			<div
-				class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32"
-			>
-				<!-- Component -->
-				<div class="flex flex-col items-center">
-					<!-- Heading -->
-					<div class="mb-8 max-w-[800px] text-center md:mb-12 lg:mb-16">
-						<h2 class="text-3xl font-bold md:text-5xl">
-							What our clients are saying
+					<!-- Heading Content -->
+					<div class="mx-auto mb-8 max-w-3xl text-center md:mb-12 lg:mb-16">
+						<h2
+							class="mb-4 mt-6 text-3xl font-extrabold text-white md:text-5xl"
+						>
+							Simple &amp; Affordable Pricing
 						</h2>
 						<div class="mx-auto mt-4 max-w-[528px]">
-							<p class="text-[#7c8aaa]">
-								Lorem ipsum dolor sit amet elit ut aliquam
+							<p class="text-[#636262]">
+								Simple &amp; fixed pricing. 30 days money-back guarantee
 							</p>
 						</div>
 					</div>
-					<!-- Content -->
-					<div
-						class="mb-12 grid grid-cols-1 gap-5 sm:grid-cols-2 md:mb-16 md:grid-cols-3 lg:mb-20"
-					>
-						<!-- Review Item -->
+					<!-- Pricing Cards -->
+					<div class="grid w-full grid-cols-1 gap-8 md:grid-cols-3 md:gap-4">
+						<!-- Pricing Card -->
 						<div
-							class="flex w-full flex-col gap-4 rounded-xl bg-[#07132d] px-4 py-8 text-white md:p-8"
+							class="mx-auto flex w-full max-w-[416px] flex-col items-start rounded-md bg-[#131313] p-8 text-white"
 						>
-							<!-- Author -->
-							<div class="flex w-full flex-row items-center justify-between">
-								<div class="flex items-center">
-									<img
-										src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f17495b177315d9ee6112_Ellipse%2015.png"
-										alt="Testimonial Image of Author"
-										class="mr-4 inline-block h-8 w-8 rounded-full"
-									/>
-									<h6 class="text-sm font-bold md:text-base">Jessica Smith</h6>
-								</div>
-								<a href="#">
-									<img
-										src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f1787dce10ff1f7fea78d_Group%2065.png"
-										alt=""
-										class="w-6"
-									/>
-								</a>
+							<div
+								class="mb-4 rounded-lg bg-[#cf8f1329] px-5 py-2 text-[#cf8f13]"
+							>
+								<p class="font-bold">Basic</p>
 							</div>
-							<!-- Image -->
-							<div class="h-full w-full">
+							<p class="mb-6 font-light text-[#636262] md:mb-10 lg:mb-12">
+								Lorem ipsum dolor sit amet consectetur adipiscing elit ut
+								aliquam, purus sit
+							</p>
+							<h2 class="my-6 pb-8 text-3xl font-extrabold md:text-5xl">
+								$99<span class="text-sm font-light text-[#636262]">/year</span>
+							</h2>
+							<a
+								href="#"
+								class="mb-5 inline-block w-full rounded-lg bg-neutral-900 px-6 py-4 text-center font-bold text-[#636262] transition hover:border-black hover:bg-[#c9fd02] hover:text-black lg:mb-8"
+								>Get started</a
+							>
+							<div class="mt-2 flex flex-row">
 								<img
-									src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f176cda12f6eb616f489a_Rectangle%20135.png"
-									alt="Testimonial Image"
-									class="h-60 w-full rounded-md object-cover"
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
 								/>
+								<p>Premium Designs</p>
 							</div>
-							<!-- Review -->
-							<div class="flex w-full flex-col items-start gap-5">
-								<p>
-									I've been using the Schedule Master app for the past few
-									months, and it has truly revolutionized the way I manage my
-									time.
-								</p>
-								<div class="h-px w-full bg-[#c4c4c4]"></div>
-								<div class="flex text-[#2d6ae0]">
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-								</div>
+							<div class="mt-2 flex flex-row">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
+								/>
+								<p>Exclusive Freebies</p>
+							</div>
+							<div class="mt-2 flex flex-row">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
+								/>
+								<p>Monthly Free Exclusive</p>
+							</div>
+							<div class="mt-2 flex flex-row">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
+								/>
+								<p>Customer Support</p>
 							</div>
 						</div>
-						<!-- Review Item -->
+						<!-- Pricing Card -->
 						<div
-							class="flex w-full flex-col gap-4 rounded-xl bg-[#07132d] px-4 py-8 text-white md:p-8"
+							class="mx-auto flex w-full max-w-[416px] flex-col items-start rounded-md bg-[#131313] p-8 text-white"
 						>
-							<div class="flex w-full flex-row items-center justify-between">
-								<div class="flex items-center">
-									<img
-										src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f1749edb551b8ee5554fb_Ellipse%2015.png"
-										alt="Testimonial Image of Author"
-										class="mr-4 h-8 w-8 rounded-full"
-									/>
-									<h6 class="text-sm font-bold md:text-base">Jessica Smith</h6>
-								</div>
-								<a href="#">
-									<img
-										src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f1787dce10ff1f7fea78d_Group%2065.png"
-										alt=""
-										class="w-6"
-									/>
-								</a>
+							<div
+								class="mb-4 rounded-lg bg-[#0caeb929] px-5 py-2 text-[#0caeb9]"
+							>
+								<p class="font-bold">Growth</p>
 							</div>
-							<div class="h-full w-full">
+							<p class="mb-6 font-light text-[#636262] md:mb-10 lg:mb-12">
+								Lorem ipsum dolor sit amet consectetur adipiscing elit ut
+								aliquam, purus sit
+							</p>
+							<h2 class="my-6 pb-8 text-3xl font-extrabold md:text-5xl">
+								$149<span class="text-sm font-light text-[#636262]">/year</span>
+							</h2>
+							<a
+								href="#"
+								class="mb-5 inline-block w-full rounded-lg bg-[#c9fd02] px-6 py-4 text-center font-bold text-black transition hover:border-black hover:bg-neutral-900 hover:text-[#636262] md:mb-6 lg:mb-8"
+								>Get started</a
+							>
+							<div class="mt-2 flex flex-row">
 								<img
-									src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f176cbe7c5bd7245a990a_Rectangle%20135-1.png"
-									alt="Testimonial Image"
-									class="h-60 w-full rounded-md object-cover"
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
 								/>
+								<p>Premium Designs</p>
 							</div>
-							<div class="flex w-full flex-col items-start gap-5">
-								<p>
-									I've been using the Schedule Master app for the past few
-									months, and it has truly revolutionized the way I manage my
-									time.
-								</p>
-								<div class="h-px w-full bg-[#c4c4c4]"></div>
-								<div class="flex text-[#2d6ae0]">
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-								</div>
+							<div class="mt-2 flex flex-row">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
+								/>
+								<p>Exclusive Freebies</p>
+							</div>
+							<div class="mt-2 flex flex-row">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
+								/>
+								<p>Monthly Free Exclusive</p>
+							</div>
+							<div class="mt-2 flex flex-row">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
+								/>
+								<p>Customer Support</p>
 							</div>
 						</div>
-						<!-- Review Item -->
+						<!-- Pricing Card -->
 						<div
-							class="flex w-full flex-col gap-4 rounded-xl bg-[#07132d] px-4 py-8 text-white md:p-8"
+							class="mx-auto flex w-full max-w-[416px] flex-col items-start rounded-md bg-[#131313] p-8 text-white"
 						>
-							<div class="flex w-full flex-row items-center justify-between">
-								<div class="flex items-center">
-									<img
-										src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f17495b177315d9ee610e_Ellipse%2015.png"
-										alt="Testimonial Image of Author"
-										class="mr-4 h-8 w-8 rounded-full"
-									/>
-									<h6 class="text-sm font-bold md:text-base">Jessica Smith</h6>
-								</div>
-								<a href="#">
-									<img
-										src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f1787dce10ff1f7fea78d_Group%2065.png"
-										alt=""
-										class="inline-block w-6"
-									/>
-								</a>
+							<div
+								class="mb-4 rounded-lg bg-[#c013cf29] px-5 py-2 text-[#c013cf]"
+							>
+								<p class="font-bold">Premium</p>
 							</div>
-							<div class="relative h-full w-full">
+							<p class="mb-6 font-light text-[#636262] md:mb-10 lg:mb-12">
+								Lorem ipsum dolor sit amet consectetur adipiscing elit ut
+								aliquam, purus sit
+							</p>
+							<h2 class="my-6 mb-5 text-3xl font-extrabold md:text-5xl">
+								$299<span class="text-sm font-light text-[#636262]">/year</span>
+							</h2>
+							<a
+								href="#"
+								class="mb-5 inline-block w-full rounded-lg bg-neutral-900 px-6 py-4 text-center font-bold text-[#636262] transition hover:border-black hover:bg-[#c9fd02] hover:text-black md:mb-6 lg:mb-8"
+								>Get started</a
+							>
+							<div class="mt-2 flex flex-row">
 								<img
-									src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f176cef937bd8c8a25f87_Rectangle%20135-2.png"
-									alt="Testimonial Image"
-									class="inline-block h-60 w-full rounded-md object-cover"
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
 								/>
+								<p>Premium Designs</p>
 							</div>
-							<div class="flex w-full flex-col items-start gap-5 p-0">
-								<p>
-									I've been using the Schedule Master app for the past few
-									months, and it has truly revolutionized the way I manage my
-									time.
-								</p>
-								<div class="h-px w-full bg-[#c4c4c4]"></div>
-								<div class="flex text-[#2d6ae0]">
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-									<div class="mr-1 w-3.5 flex-none">
-										<svg
-											width="14"
-											height="13"
-											viewBox="0 0 14 13"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M5.68021 0.92574C6.31574 -0.00157559 7.68426 -0.00157684 8.31979 0.925739L9.49972 2.6474C9.70777 2.95097 10.0141 3.17354 10.3671 3.27759L12.3691 3.86775C13.4474 4.18562 13.8703 5.48717 13.1848 6.37815L11.912 8.03235C11.6876 8.32402 11.5706 8.68415 11.5807 9.05203L11.6381 11.1384C11.669 12.2622 10.5618 13.0666 9.50263 12.6899L7.53608 11.9906C7.18933 11.8673 6.81067 11.8673 6.46392 11.9906L4.49738 12.6899C3.43816 13.0666 2.331 12.2622 2.3619 11.1384L2.41929 9.05203C2.4294 8.68415 2.31239 8.32402 2.08797 8.03235L0.815197 6.37815C0.129656 5.48717 0.552554 4.18562 1.63087 3.86775L3.63289 3.27759C3.98589 3.17354 4.29223 2.95097 4.50028 2.6474L5.68021 0.92574Z"
-												fill="currentColor"
-											></path>
-										</svg>
-									</div>
-								</div>
+							<div class="mt-2 flex flex-row">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
+								/>
+								<p>Exclusive Freebies</p>
+							</div>
+							<div class="mt-2 flex flex-row">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
+								/>
+								<p>Monthly Free Exclusive</p>
+							</div>
+							<div class="mt-2 flex flex-row">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f68133fc5cb4e29ed28fb_akar-icons_circle-check-fill.svg"
+									alt=""
+									class="mr-2 inline-block w-5"
+								/>
+								<p>Customer Support</p>
 							</div>
 						</div>
 					</div>
-					<a
-						href="#"
-						class="rounded-full bg-[#081631] px-6 py-4 text-center font-bold text-[#7786a7] transition hover:bg-[#2d6ae0] hover:text-white"
-						>Check All&nbsp;Reviews</a
-					>
 				</div>
 			</div>
 		</section>
 
-		<section class="bg-[#eef0f4]">
+		<!-- Testimonial -->
+		<section class="bg-[#f7f6f2]">
 			<!-- Container -->
 			<div
 				class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32"
 			>
-				<!-- Component -->
-				<div
-					class="flex flex-col justify-center gap-12 px-8 lg:grid lg:grid-cols-2 lg:gap-20"
+				<h2
+					class="mx-auto mb-8 mt-6 max-w-3xl text-center text-3xl font-extrabold md:mb-16 md:text-5xl"
 				>
-					<!-- Left Component -->
+					What our clients are saying
+				</h2>
+				<!-- Testimonails -->
+				<div class="mb-5 grid grid-cols-1 gap-5 md:mb-6 md:grid-cols-2 lg:mb-8">
+					<div
+						class="grid min-h-[280px] grid-cols-[1fr_1.75fr] gap-6 rounded-2xl bg-white p-8 md:p-10"
+					>
+						<div class="flex flex-col justify-between">
+							<div class="flex flex-col items-start gap-4">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c34e_Image%20%26%20Quotation.svg"
+									alt=""
+									class="inline-block h-16"
+								/>
+								<div class="flex flex-col items-start">
+									<h6 class="text-sm font-bold md:text-base">Jonathan Smith</h6>
+									<p class="text-sm text-[#636262]">Small Business Owner</p>
+								</div>
+							</div>
+							<div class="flex">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+							</div>
+						</div>
+						<p class="text-[#636262]">
+							“Lorem ipsum dolor sit amet, &nbsp;elit ut aliquam, purus sit amet
+							luctus venenatis elit ut aliquam, purus sit amet luctus venenatis"
+						</p>
+					</div>
+					<div
+						class="grid min-h-[280px] grid-cols-[1fr_1.75fr] gap-6 rounded-2xl bg-white p-8 md:p-10"
+					>
+						<div class="flex flex-col justify-between">
+							<div class="flex flex-col items-start gap-4">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c350_Image%20%26%20Quotation-1.svg"
+									alt=""
+									class="inline-block h-16"
+								/>
+								<div class="flex flex-col items-start">
+									<h6 class="text-sm font-bold md:text-base">Jonathan Smith</h6>
+									<p class="text-sm text-[#636262]">Small Business Owner</p>
+								</div>
+							</div>
+							<div class="flex">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+							</div>
+						</div>
+						<p class="text-[#636262]">
+							“Lorem ipsum dolor sit amet, &nbsp;elit ut aliquam, purus sit amet
+							luctus venenatis elit ut aliquam, purus sit amet luctus venenatis"
+						</p>
+					</div>
+					<div
+						class="grid min-h-[280px] grid-cols-[1fr_1.75fr] gap-6 rounded-2xl bg-white p-8 md:p-10"
+					>
+						<div class="flex flex-col justify-between">
+							<div class="flex flex-col items-start gap-4">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c34d_Image%20%26%20Quotation-2.svg"
+									width="90"
+									alt=""
+									class="inline-block h-16"
+								/>
+								<div class="flex flex-col items-start">
+									<h6 class="text-sm font-bold md:text-base">Jonathan Smith</h6>
+									<p class="text-sm text-[#636262]">Small Business Owner</p>
+								</div>
+							</div>
+							<div class="flex">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+							</div>
+						</div>
+						<p class="text-[#636262]">
+							“Lorem ipsum dolor sit amet, &nbsp;elit ut aliquam, purus sit amet
+							luctus venenatis elit ut aliquam, purus sit amet luctus venenatis"
+						</p>
+					</div>
+					<div
+						class="grid min-h-[280px] grid-cols-[1fr_1.75fr] gap-6 rounded-2xl bg-white p-8 md:p-10"
+					>
+						<div class="flex flex-col justify-between">
+							<div class="flex flex-col items-start gap-4">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c34f_Image%20%26%20Quotation-3.svg"
+									alt=""
+									class="inline-block h-16"
+								/>
+								<div class="flex flex-col items-start">
+									<h6 class="text-sm font-bold md:text-base">Jonathan Smith</h6>
+									<p class="text-sm text-[#636262]">Small Business Owner</p>
+								</div>
+							</div>
+							<div class="flex">
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+								<img
+									src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f683b1e3793b739a1c347_Vector.svg"
+									alt=""
+									class="mr-1 inline-block w-3.5 flex-none"
+								/>
+							</div>
+						</div>
+						<p class="text-[#636262]">
+							“Lorem ipsum dolor sit amet, &nbsp;elit ut aliquam, purus sit amet
+							luctus venenatis elit ut aliquam, purus sit amet luctus venenatis"
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col items-center justify-center">
+					<a href="#" class="mx-auto font-bold text-black">Check all reviews</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- How It Works -->
+
+		<section>
+			<!-- Container -->
+			<div
+				class="mx-auto w-full max-w-3xl px-5 py-12 md:px-10 md:py-16 lg:py-20"
+			>
+				<!-- Heading -->
+				<h2
+					class="mx-auto mb-12 max-w-3xl text-center text-3xl font-extrabold md:mb-20 md:text-5xl"
+				>
+					Get Started In 4 Easy Steps
+				</h2>
+				<!-- How it Works -->
+				<div class="mx-auto grid max-w-2xl grid-cols-1 gap-6">
+					<!-- Item -->
+					<div
+						class="flex flex-row items-center gap-6 rounded-[60px] border border-solid border-[#ada790] px-6 py-4 transition hover:bg-[#eceae2]"
+					>
+						<div
+							class="flex h-20 w-20 flex-none flex-col items-center justify-center rounded-full bg-[#c9fd02]"
+						>
+							<img
+								src="https://assets.website-files.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a274_CodepenLogo.svg"
+								alt="Get Started Icon 1"
+								class="inline-block"
+							/>
+						</div>
+						<div class="flex flex-col items-start gap-2.5">
+							<h5 class="text-base font-bold md:text-xl">Download the app</h5>
+							<p class="text-[#636262]">
+								Lorem ipsum dolor sit amet consectetur adipiscing elit ut
+								aliquam, purus sit amet dolor sit amet consectetur adipiscing
+							</p>
+						</div>
+					</div>
+					<!-- Item -->
+					<div
+						class="flex flex-row items-center gap-6 rounded-[60px] border border-solid border-[#ada790] px-6 py-4 transition hover:bg-[#eceae2]"
+					>
+						<div
+							class="flex h-20 w-20 flex-none flex-col items-center justify-center rounded-full bg-[#c9fd02]"
+						>
+							<img
+								src="https://assets.website-files.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a28e_GitlabLogo.svg"
+								alt="Get Started Icon 2"
+								class="inline-block"
+							/>
+						</div>
+						<div class="flex flex-col items-start gap-2.5">
+							<h5 class="text-base font-bold md:text-xl">
+								Sign up for account
+							</h5>
+							<p class="text-[#636262]">
+								Lorem ipsum dolor sit amet consectetur adipiscing elit ut
+								aliquam, purus sit amet dolor sit amet consectetur adipiscing
+							</p>
+						</div>
+					</div>
+					<!-- Item -->
+					<div
+						class="flex flex-row items-center gap-6 rounded-[60px] border border-solid border-[#ada790] px-6 py-4 transition hover:bg-[#eceae2]"
+					>
+						<div
+							class="flex h-20 w-20 flex-none flex-col items-center justify-center rounded-full bg-[#c9fd02]"
+						>
+							<img
+								src="https://assets.website-files.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a274_CodepenLogo.svg"
+								alt="Get Started Icon 3"
+								class="inline-block"
+							/>
+						</div>
+						<div class="flex flex-col items-start gap-2.5">
+							<h5 class="text-base font-bold md:text-xl">
+								Activate virtual card
+							</h5>
+							<p class="text-[#636262]">
+								Lorem ipsum dolor sit amet consectetur adipiscing elit ut
+								aliquam, purus sit amet dolor sit amet consectetur adipiscing
+							</p>
+						</div>
+					</div>
+					<!-- Item -->
+					<div
+						class="flex flex-row items-center gap-6 rounded-[60px] border border-solid border-[#ada790] px-6 py-4 transition hover:bg-[#eceae2]"
+					>
+						<div
+							class="flex h-20 w-20 flex-none flex-col items-center justify-center rounded-full bg-[#c9fd02]"
+						>
+							<img
+								src="https://assets.website-files.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a28e_GitlabLogo.svg"
+								alt="Get Started Icon 4"
+								class="inline-block"
+							/>
+						</div>
+						<div class="flex flex-col items-start gap-2.5">
+							<h5 class="text-base font-bold md:text-xl">Ready set go!</h5>
+							<p class="text-[#636262]">
+								Lorem ipsum dolor sit amet consectetur adipiscing elit ut
+								aliquam, purus sit amet dolor sit amet consectetur adipiscing
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ -->
+
+		<section class="bg-[#f7f6f2]">
+			<!-- Container -->
+			<div
+				class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32"
+			>
+				<!-- Heading -->
+				<div class="mx-auto mb-8 max-w-3xl text-center md:mb-12 lg:mb-16">
+					<h2 class="mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
+						Frequently Asked Questions
+					</h2>
+					<div class="mx-auto mt-4 max-w-[528px]">
+						<p class="text-[#636262]">
+							Lorem ipsum dolor sit amet consectetur adipiscing elit ut
+							aliquam,purus sit amet luctus magna fringilla urna
+						</p>
+					</div>
+				</div>
+				<!-- FAQ Items -->
+				<div
+					class="mb-8 grid grid-cols-1 justify-center gap-4 md:mb-12 lg:mb-16 lg:grid-cols-2"
+				>
+					<!-- FAQ Left Col -->
 					<div class="w-full">
-						<!-- Header Text -->
-						<div class="mb-8 max-w-3xl md:mb-12 lg:mb-16">
-							<h2 class="text-3xl font-bold md:text-5xl">General FAQs</h2>
-							<div class="ml-0 mr-0 mt-4 max-w-[528px]">
-								<p class="text-[#636262]">
-									Lorem ipsum dolor sit amet consectetur adipiscing elit ut
-									aliquam,purus sit amet luctus magna fringilla urna
+						<div class="mb-6 w-full rounded-xl bg-white p-8">
+							<div class="flex cursor-pointer items-start justify-between">
+								<div class="text-xl font-bold">
+									How this theme is different from others in market?
+								</div>
+								<div
+									class="relative ml-10 mt-1 flex h-5 w-5 items-center justify-center"
+								>
+									<div class="absolute h-5 w-0.5 bg-[#0b0b1f]"></div>
+									<div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
+								</div>
+							</div>
+							<div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+								<p class="tracking-[0.2px]">
+									Pellentesque in nisi aliquet, pellentesque purus eget,
+									imperdiet turpis. Fusce at enim quis neque viverra convallis.
+									Vivamus ut elementum leo, eget tempus nisl. Sed viverra enim
+									ac turpis posuere consectetur. Sed enim nibh, consequat vitae
+									lacus eu, ullamcorper ullamcorper massa. Pellentesque purus
+									eget, imperdiet turpis.
 								</p>
 							</div>
 						</div>
-						<!-- Questions Block -->
-						<div class="w-full max-w-3xl rounded-xl bg-white p-8">
-							<div class="flex flex-row gap-4">
-								<img
-									src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f1823da12f6eb616fe18c_Ellipse%2015.png"
-									alt="Support image of Author"
-									class="inline-block h-12 w-12 rounded-full object-cover"
-								/>
-								<div class="flex flex-col gap-1.5">
-									<h5 class="text-base font-bold md:text-xl">
-										Still have questions?
-									</h5>
-									<div class="max-w-[380px]">
-										<p class="text-[#636262]">
-											Can’t find the answer you’re looking for? Please chat to
-											lorem
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="mb-6 mt-8 h-[0.5px] w-full bg-[#a6a6a6]"></div>
-							<a
-								href="#"
-								class="inline-block rounded-full bg-[#2d6ae0] px-6 py-4 text-center font-bold text-white transition hover:bg-[#081631]"
-								>Get In Touch</a
-							>
-						</div>
-					</div>
-					<!-- FAQ Items -->
-					<div class="">
-						<div
-							class="mb-6 w-full rounded-xl border border-[#c4c4c4] bg-white p-8"
-						>
-							<div class="mb-5 flex cursor-pointer items-start justify-between">
+						<div class="mb-6 w-full rounded-xl bg-white p-8">
+							<div class="flex cursor-pointer items-start justify-between">
 								<div class="text-xl font-bold">
 									What is your policy on distributon
 								</div>
@@ -887,8 +765,8 @@
 									<div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
 								</div>
 							</div>
-							<div class="mb-4 w-full max-w-[640px] lg:max-w-[960px]">
-								<p>
+							<div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+								<p class="tracking-[0.2px]">
 									Pellentesque in nisi aliquet, pellentesque purus eget,
 									imperdiet turpis. Fusce at enim quis neque viverra convallis.
 									Vivamus ut elementum leo, eget tempus nisl. Sed viverra enim
@@ -898,10 +776,8 @@
 								</p>
 							</div>
 						</div>
-						<div
-							class="mb-6 w-full rounded-xl border border-[#c4c4c4] bg-white p-8"
-						>
-							<div class="mb-5 flex cursor-pointer items-start justify-between">
+						<div class="mb-6 w-full rounded-xl bg-white p-8">
+							<div class="flex cursor-pointer items-start justify-between">
 								<div class="text-xl font-bold">
 									How can I contribute to Flowspark?
 								</div>
@@ -912,8 +788,8 @@
 									<div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
 								</div>
 							</div>
-							<div class="mb-4 w-full max-w-[640px] lg:max-w-[960px]">
-								<p>
+							<div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+								<p class="tracking-[0.2px]">
 									Pellentesque in nisi aliquet, pellentesque purus eget,
 									imperdiet turpis. Fusce at enim quis neque viverra convallis.
 									Vivamus ut elementum leo, eget tempus nisl. Sed viverra enim
@@ -923,12 +799,13 @@
 								</p>
 							</div>
 						</div>
-						<div
-							class="mb-6 w-full rounded-xl border border-[#c4c4c4] bg-white p-8"
-						>
-							<div class="mb-5 flex cursor-pointer items-start justify-between">
+					</div>
+					<!-- FAQ Right Col -->
+					<div class="w-full">
+						<div class="mb-6 w-full rounded-xl bg-white p-8">
+							<div class="flex cursor-pointer items-start justify-between">
 								<div class="text-xl font-bold">
-									What other themes do you have?
+									How can I contribute to Flowspark?
 								</div>
 								<div
 									class="relative ml-10 mt-1 flex h-5 w-5 items-center justify-center"
@@ -937,8 +814,8 @@
 									<div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
 								</div>
 							</div>
-							<div class="mb-4 w-full max-w-[640px] lg:max-w-[960px]">
-								<p>
+							<div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+								<p class="tracking-[0.2px]">
 									Pellentesque in nisi aliquet, pellentesque purus eget,
 									imperdiet turpis. Fusce at enim quis neque viverra convallis.
 									Vivamus ut elementum leo, eget tempus nisl. Sed viverra enim
@@ -948,12 +825,10 @@
 								</p>
 							</div>
 						</div>
-						<div
-							class="mb-6 w-full rounded-xl border border-[#c4c4c4] bg-white p-8"
-						>
-							<div class="mb-5 flex cursor-pointer items-start justify-between">
+						<div class="mb-6 w-full rounded-xl bg-white p-8">
+							<div class="flex cursor-pointer items-start justify-between">
 								<div class="text-xl font-bold">
-									What is your policy on distributon
+									How can I contribute to Flowspark?
 								</div>
 								<div
 									class="relative ml-10 mt-1 flex h-5 w-5 items-center justify-center"
@@ -962,8 +837,31 @@
 									<div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
 								</div>
 							</div>
-							<div class="mb-4 w-full max-w-[640px] lg:max-w-[960px]">
-								<p>
+							<div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+								<p class="tracking-[0.2px]">
+									Pellentesque in nisi aliquet, pellentesque purus eget,
+									imperdiet turpis. Fusce at enim quis neque viverra convallis.
+									Vivamus ut elementum leo, eget tempus nisl. Sed viverra enim
+									ac turpis posuere consectetur. Sed enim nibh, consequat vitae
+									lacus eu, ullamcorper ullamcorper massa. Pellentesque purus
+									eget, imperdiet turpis.
+								</p>
+							</div>
+						</div>
+						<div class="mb-6 w-full rounded-xl bg-white p-8">
+							<div class="flex cursor-pointer items-start justify-between">
+								<div class="text-xl font-bold">
+									How can I contribute to Flowspark?
+								</div>
+								<div
+									class="relative ml-10 mt-1 flex h-5 w-5 items-center justify-center"
+								>
+									<div class="absolute h-5 w-0.5 bg-[#0b0b1f]"></div>
+									<div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
+								</div>
+							</div>
+							<div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+								<p class="tracking-[0.2px]">
 									Pellentesque in nisi aliquet, pellentesque purus eget,
 									imperdiet turpis. Fusce at enim quis neque viverra convallis.
 									Vivamus ut elementum leo, eget tempus nisl. Sed viverra enim
@@ -975,132 +873,228 @@
 						</div>
 					</div>
 				</div>
+				<div class="mb-8 md:mb-12 lg:mb-16"></div>
+				<p class="text-center">
+					Can’t find the answer you’re looking for? Reach out to our
+					<a href="#" class="text-black">customer support team</a>.
+				</p>
 			</div>
 		</section>
 
-		<section class="bg-[#2d6ae0] text-white">
+		<!-- CTA -->
+
+		<section class="bg-black px-5 md:px-10">
 			<!-- Container -->
-			<div
-				class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32"
-			>
+			<div class="mx-auto w-full max-w-7xl py-16 md:py-24 lg:py-32">
 				<!-- Component -->
 				<div
 					class="grid grid-cols-1 items-center gap-8 sm:gap-20 lg:grid-cols-2"
 				>
-					<div class="max-w-[720px] md:max-w-lg">
-						<h2 class="mb-4 text-3xl font-bold md:text-5xl">
-							Organise and Simplify Meetings
+					<!-- Header Content -->
+					<div class="max-w-[720px]">
+						<h2
+							class="mb-4 mt-6 pb-4 text-4xl font-bold text-white md:text-6xl"
+						>
+							Fast and Reliable Payments
 						</h2>
 						<div class="mb-6 max-w-[480px] md:mb-10 lg:mb-12">
-							<p class="text-[#c0d6ff]">
+							<p class="text-[#aeaeae]">
 								Say goodbye to payment headaches with SecurePay! Our easy-to-use
 								payment platform makes it simple for businesses and individuals
 								to send and receive payments quickly and securely.
 							</p>
 						</div>
 						<a
-							href="https://build.flowspark.co/template"
-							target="_blank"
-							class="inline-block rounded-[60px] bg-white px-6 py-4 text-center font-bold text-[#2d6ae0] transition hover:bg-[#081631]"
-							>More Free Templates</a
+							href="#"
+							class="inline-block rounded-full bg-[#c9fd02] px-6 py-4 text-center font-bold text-black transition hover:border-black hover:bg-white"
+							>Get started</a
 						>
 					</div>
-					<div class="">
+					<!-- Image Div -->
+					<div>
 						<img
-							src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f0fa7c69acb78897b1e20_Standard%20Image.png"
-							alt="Call to action image"
-							class="mx-auto inline-block h-full w-full max-w-[640px] object-cover"
+							src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a289_image%204.png"
+							alt="CTA Card Image"
+							class="mx-auto inline-block h-full w-full max-w-[640px] rounded-2xl object-cover"
 						/>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<footer class="bg-[#1b51b9] text-white">
-			<!-- Container -->
+		<!-- Footer -->
+
+		<footer class="block bg-black">
 			<div
-				class="mx-auto w-full max-w-7xl px-5 py-12 md:px-10 md:py-16 lg:py-20"
+				class="py-16 md:py-24 lg:py-32 mx-auto w-full max-w-7xl px-5 md:px-10"
 			>
-				<!-- Main Footer Content -->
+				<a href="#" class="mb-12 inline-block max-w-full">
+					<img
+						src="https://assets.website-files.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26c_%5BA%5D--Navbar%20Brand.png"
+						alt=""
+						class="inline-block max-h-10"
+					/>
+				</a>
 				<div
-					class="grid grid-cols-2 justify-between gap-8 sm:grid-cols-3 lg:grid-cols-5"
+					class="grid grid-cols-[auto_1fr] justify-between gap-10 sm:grid-cols-[auto_auto_auto] lg:grid-cols-[0.45fr_auto_auto_auto]"
 				>
 					<div
-						class="flex flex-col space-y-4 py-2 text-sm font-semibold text-[#c0d6ff] transition"
+						class="flex w-full grid-cols-1 flex-col items-start justify-start gap-8 max-[991px]:mr-0 max-[991px]:max-w-[400px] max-[991px]:[grid-area:span_1/span_3/span_1/span_3] max-[479px]:[grid-area:span_1/span_2/span_1/span_2]"
 					>
-						<div class="my-2 text-base text-white">Solution</div>
-						<a href="#" class="hover:font-bold hover:text-white">Marketing</a>
-						<a href="#" class="hover:font-bold hover:text-white">Analytics</a>
-						<a href="#" class="hover:font-bold hover:text-white">Commerce</a>
-						<a href="#" class="hover:font-bold hover:text-white">Insights</a>
+						<p class="text-[#636262]">
+							Lorem ipsum dolor sit amet, &nbsp;elit ut aliquam, purus sit amet
+							luctus
+						</p>
+						<div class="mx-0 mb-4 w-full">
+							<form
+								name="email-form"
+								method="get"
+								class="relative flex max-w-full items-center justify-center"
+							>
+								<input
+									type="email"
+									class="m-0 block h-full max-h-8 w-full rounded-lg border border-solid border-black bg-[#101010] px-3 py-6 align-middle text-sm text-[#333333] focus:border-[#3898ec] focus:outline-0"
+									maxlength="256"
+									name="email-4"
+									placeholder="Enter your email"
+									required=""
+								/>
+								<div
+									class="absolute bottom-[0%] left-[auto] right-[5%] top-[25%] text-[#c9fd02]"
+								>
+									<svg
+										width="24"
+										height="25"
+										viewBox="0 0 24 25"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M20.9752 3.02708C20.7866 2.83863 20.5512 2.70382 20.2932 2.63651C20.0353 2.5692 19.764 2.57182 19.5074 2.64411L2.0391 7.57102C1.74519 7.65391 1.48358 7.82454 1.28924 8.0601C1.0949 8.29565 0.977084 8.58491 0.951545 8.88922C0.926006 9.19353 0.993958 9.49838 1.14632 9.76303C1.29868 10.0277 1.52819 10.2395 1.80418 10.3702L9.11045 13.8311L14.1057 8.83591C14.2463 8.69525 14.4371 8.61623 14.636 8.61623C14.835 8.61623 15.0257 8.69525 15.1664 8.83591C15.3071 8.97657 15.3861 9.16735 15.3861 9.36628C15.3861 9.5652 15.3071 9.75598 15.1664 9.89664L10.1712 14.8919L13.6321 22.1981C13.7519 22.4552 13.9429 22.6726 14.1823 22.8246C14.4218 22.9767 14.6997 23.057 14.9834 23.0562C15.0263 23.0562 15.0696 23.0544 15.1131 23.0508C15.418 23.0269 15.708 22.9097 15.9439 22.7151C16.1798 22.5205 16.35 22.258 16.4313 21.9632L21.3582 4.49494C21.4304 4.2383 21.433 3.96707 21.3657 3.7091C21.2984 3.45112 21.1636 3.21572 20.9752 3.02708Z"
+											fill="currentColor"
+										></path>
+									</svg>
+								</div>
+								<input
+									type="submit"
+									value="Subscribe"
+									class="absolute bottom-[0%] left-[auto] right-[0%] top-[0%] m-0 inline-block cursor-pointer rounded-[60px] border border-solid border-[#c9fd02] bg-[#c9fd02] px-6 py-4 text-center font-bold text-black no-underline opacity-0 transition hover:border-black hover:bg-white"
+								/>
+								<div></div>
+								<div></div>
+							</form>
+						</div>
+						<div>
+							<p class="font-bold uppercase text-[#c9fd02]">email us</p>
+							<p class="text-[#636262]">support@flowspark.co</p>
+						</div>
 					</div>
-					<div
-						class="flex flex-col space-y-4 py-2 text-sm font-semibold text-[#c0d6ff]"
-					>
-						<div class="my-2 text-base text-white">Support</div>
-						<a href="#" class="hover:font-bold hover:text-white">Pricing</a>
-						<a href="#" class="hover:font-bold hover:text-white"
+					<div class="flex flex-col items-start font-semibold no-underline">
+						<div class="m-4 max-[991px]:ml-0 max-[991px]:mr-0">
+							<p class="text-xl text-white">Solution</p>
+						</div>
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
+							>Marketing</a
+						>
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
+							>Analytics</a
+						>
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
+							>Commerce</a
+						>
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
+							>Insights</a
+						>
+					</div>
+					<div class="flex flex-col items-start font-semibold no-underline">
+						<div class="m-4 max-[991px]:ml-0 max-[991px]:mr-0">
+							<p class="text-xl text-white">Support</p>
+						</div>
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
+							>Pricing</a
+						>
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
 							>Documentation</a
 						>
-						<a href="#" class="hover:font-bold hover:text-white">Guides</a>
-						<a href="#" class="hover:font-bold hover:text-white"
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
+							>Guides</a
+						>
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
 							>API&nbsp;Status</a
 						>
 					</div>
-					<div
-						class="flex flex-col space-y-4 py-2 text-sm font-semibold text-[#c0d6ff]"
-					>
-						<div class="my-2 text-base text-white">Company</div>
-						<a href="#" class="hover:font-bold hover:text-white">About</a>
-						<a href="#" class="hover:font-bold hover:text-white">Blog</a>
-						<a href="#" class="hover:font-bold hover:text-white">Jobs</a>
-						<a href="#" class="hover:font-bold hover:text-white">Press</a>
-						<a href="#" class="hover:font-bold hover:text-white">Partners</a>
-					</div>
-					<div
-						class="flex flex-col space-y-4 py-2 text-sm font-semibold text-[#c0d6ff]"
-					>
-						<div class="my-2 text-base text-white">Blog</div>
-						<a href="#" class="hover:font-bold hover:text-white">About</a>
-						<a href="#" class="hover:font-bold hover:text-white">Blog</a>
-						<a href="#" class="hover:font-bold hover:text-white">Jobs</a>
-						<a href="#" class="hover:font-bold hover:text-white">Press</a>
-						<a href="#" class="hover:font-bold hover:text-white">Partners</a>
-					</div>
-					<div
-						class="flex flex-col space-y-4 py-2 text-sm font-semibold text-[#c0d6ff]"
-					>
-						<div class="my-2 text-base text-white">Products</div>
-						<a href="#" class="hover:font-bold hover:text-white">About</a>
-						<a href="#" class="hover:font-bold hover:text-white">Blog</a>
-						<a href="#" class="hover:font-bold hover:text-white">Jobs</a>
-						<a href="#" class="hover:font-bold hover:text-white">Press</a>
-						<a href="#" class="hover:font-bold hover:text-white">Partners</a>
-					</div>
-				</div>
-				<!-- Footer Divider -->
-				<div class="mb-14 mt-16 w-full border-b-[1.5px] border-[#3472ed]"></div>
-				<!-- Footer Footnotes -->
-				<div
-					class="flex flex-row items-start justify-between max-[767px]:flex-col max-[479px]:flex-col-reverse md:items-center"
-				>
-					<div class="max-[991px]:flex-none">
-						<p class="text-[#c0d6ff]">© Copyright 2021. All rights reserved.</p>
-					</div>
-					<div class="space-x-3 py-2 text-center font-semibold">
+					<div class="flex flex-col items-start font-semibold no-underline">
+						<div class="m-4 max-[991px]:ml-0 max-[991px]:mr-0">
+							<p class="text-xl text-white">Company</p>
+						</div>
 						<a
 							href="#"
-							class="inline-block text-[#c0d6ff] transition hover:text-white"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
+							>About</a
+						>
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
+							>Blog</a
+						>
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
+							>Jobs</a
+						>
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
+							>Press</a
+						>
+						<a
+							href="#"
+							class="py-2 text-sm font-bold text-[#636262] transition hover:text-white"
+							>Partners</a
+						>
+					</div>
+				</div>
+				<div
+					class="mb-20 mt-20 w-full border border-solid border-[#101010]"
+				></div>
+				<div
+					class="flex flex-row justify-between max-[991px]:items-center max-[767px]:flex-col max-[767px]:items-start max-[479px]:flex-col-reverse"
+				>
+					<div class="max-[991px]:flex-none">
+						<p class="text-[#636262]">© Copyright 2021. All rights reserved.</p>
+					</div>
+					<div
+						class="text-center font-semibold max-[991px]:ml-0 max-[991px]:mr-0 max-[991px]:py-1"
+					>
+						<a
+							href="#"
+							class="inline-block py-2 font-bold text-[#636262] transition hover:text-white max-[479px]:px-2.5 lg:pl-12 pl-5 pr-0"
 							>Terms of Service</a
 						>
 						<a
 							href="#"
-							class="inline-block text-[#c0d6ff] transition hover:text-white"
+							class="inline-block py-2 font-bold text-[#636262] transition hover:text-white max-[479px]:px-2.5 lg:pl-12 pl-5 pr-0"
 							>License</a
 						>
 						<a
 							href="#"
-							class="inline-block text-[#c0d6ff] transition hover:text-white"
+							class="inline-block py-2 font-bold text-[#636262] transition hover:text-white max-[479px]:px-2.5 lg:pl-12 pl-5 pr-0"
 							>Privacy Policy</a
 						>
 					</div>
