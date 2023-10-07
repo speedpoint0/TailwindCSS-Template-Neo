@@ -13,7 +13,9 @@
 						class="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20"
 					>
 						<!-- SVG LOGO - YOU CAN REPLACE THIS -->
-						<a href="#">
+						<a
+							href="https://tailwind-css-template-neo.vercel.app/Landing%20Home"
+						>
 							<img
 								src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26c_%5BA%5D--Navbar%20Brand.png"
 								alt=""
