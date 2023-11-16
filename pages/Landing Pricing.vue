@@ -144,7 +144,7 @@
               >
               <a
                 href="https://tailwind-css-template-neo.vercel.app/Landing%20Blog"
-                class="font-inter rounded-lg pb-8 hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
+                class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
                 >Blog</a
               >
 
@@ -760,19 +760,37 @@
         >
           <!-- FAQ Left Col -->
           <div class="w-full">
-            <div class="mb-6 w-full rounded-xl bg-white p-8">
-              <div class="flex cursor-pointer items-start justify-between">
+            <div
+              class="mb-6 w-full rounded-xl bg-white p-8"
+              x-data="{ open: false }"
+            >
+              <div
+                class="flex cursor-pointer items-start justify-between"
+                x-on:click.prevent="open = !open"
+              >
                 <div class="text-xl font-bold">
                   How this theme is different from others in market?
                 </div>
                 <div
                   class="relative ml-10 mt-1 flex h-5 w-5 items-center justify-center"
                 >
-                  <div class="absolute h-5 w-0.5 bg-[#0b0b1f]"></div>
+                  <div
+                    class="absolute h-5 w-0.5 bg-[#0b0b1f] transition-transform"
+                    x-bind:class="open ? 'transform rotate-90' : ''"
+                  ></div>
                   <div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
                 </div>
               </div>
-              <div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+              <div
+                class="w-full max-w-[640px] pt-4 lg:max-w-[960px]"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="transform translate-y--10 opacity-0"
+                x-transition:enter-end="transform translate-y-0 opacity-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="transform translate-y-0 opacity-100"
+                x-transition:leave-end="transform translate-y--10 opacity-0"
+              >
                 <p class="tracking-[0.2px]">
                   Pellentesque in nisi aliquet, pellentesque purus eget,
                   imperdiet turpis. Fusce at enim quis neque viverra convallis.
@@ -783,19 +801,37 @@
                 </p>
               </div>
             </div>
-            <div class="mb-6 w-full rounded-xl bg-white p-8">
-              <div class="flex cursor-pointer items-start justify-between">
+            <div
+              class="mb-6 w-full rounded-xl bg-white p-8"
+              x-data="{ open: false }"
+            >
+              <div
+                class="flex cursor-pointer items-start justify-between"
+                x-on:click.prevent="open = !open"
+              >
                 <div class="text-xl font-bold">
                   What is your policy on distributon
                 </div>
                 <div
                   class="relative ml-10 mt-1 flex h-5 w-5 items-center justify-center"
                 >
-                  <div class="absolute h-5 w-0.5 bg-[#0b0b1f]"></div>
+                  <div
+                    class="absolute h-5 w-0.5 bg-[#0b0b1f] transition-transform"
+                    x-bind:class="open ? 'transform rotate-90' : ''"
+                  ></div>
                   <div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
                 </div>
               </div>
-              <div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+              <div
+                class="w-full max-w-[640px] pt-4 lg:max-w-[960px]"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="transform translate-y--10 opacity-0"
+                x-transition:enter-end="transform translate-y-0 opacity-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="transform translate-y-0 opacity-100"
+                x-transition:leave-end="transform translate-y--10 opacity-0"
+              >
                 <p class="tracking-[0.2px]">
                   Pellentesque in nisi aliquet, pellentesque purus eget,
                   imperdiet turpis. Fusce at enim quis neque viverra convallis.
@@ -806,19 +842,37 @@
                 </p>
               </div>
             </div>
-            <div class="mb-6 w-full rounded-xl bg-white p-8">
-              <div class="flex cursor-pointer items-start justify-between">
+            <div
+              class="mb-6 w-full rounded-xl bg-white p-8"
+              x-data="{ open: false }"
+            >
+              <div
+                class="flex cursor-pointer items-start justify-between"
+                x-on:click.prevent="open = !open"
+              >
                 <div class="text-xl font-bold">
                   How can I contribute to Flowspark?
                 </div>
                 <div
                   class="relative ml-10 mt-1 flex h-5 w-5 items-center justify-center"
                 >
-                  <div class="absolute h-5 w-0.5 bg-[#0b0b1f]"></div>
+                  <div
+                    class="absolute h-5 w-0.5 bg-[#0b0b1f] transition-transform"
+                    x-bind:class="open ? 'transform rotate-90' : ''"
+                  ></div>
                   <div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
                 </div>
               </div>
-              <div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+              <div
+                class="w-full max-w-[640px] pt-4 lg:max-w-[960px]"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="transform translate-y--10 opacity-0"
+                x-transition:enter-end="transform translate-y-0 opacity-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="transform translate-y-0 opacity-100"
+                x-transition:leave-end="transform translate-y--10 opacity-0"
+              >
                 <p class="tracking-[0.2px]">
                   Pellentesque in nisi aliquet, pellentesque purus eget,
                   imperdiet turpis. Fusce at enim quis neque viverra convallis.
@@ -832,19 +886,37 @@
           </div>
           <!-- FAQ Right Col -->
           <div class="w-full">
-            <div class="mb-6 w-full rounded-xl bg-white p-8">
-              <div class="flex cursor-pointer items-start justify-between">
+            <div
+              class="mb-6 w-full rounded-xl bg-white p-8"
+              x-data="{ open: false }"
+            >
+              <div
+                class="flex cursor-pointer items-start justify-between"
+                x-on:click.prevent="open = !open"
+              >
                 <div class="text-xl font-bold">
                   How can I contribute to Flowspark?
                 </div>
                 <div
                   class="relative ml-10 mt-1 flex h-5 w-5 items-center justify-center"
                 >
-                  <div class="absolute h-5 w-0.5 bg-[#0b0b1f]"></div>
+                  <div
+                    class="absolute h-5 w-0.5 bg-[#0b0b1f] transition-transform"
+                    x-bind:class="open ? 'transform rotate-90' : ''"
+                  ></div>
                   <div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
                 </div>
               </div>
-              <div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+              <div
+                class="w-full max-w-[640px] pt-4 lg:max-w-[960px]"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="transform translate-y--10 opacity-0"
+                x-transition:enter-end="transform translate-y-0 opacity-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="transform translate-y-0 opacity-100"
+                x-transition:leave-end="transform translate-y--10 opacity-0"
+              >
                 <p class="tracking-[0.2px]">
                   Pellentesque in nisi aliquet, pellentesque purus eget,
                   imperdiet turpis. Fusce at enim quis neque viverra convallis.
@@ -855,19 +927,37 @@
                 </p>
               </div>
             </div>
-            <div class="mb-6 w-full rounded-xl bg-white p-8">
-              <div class="flex cursor-pointer items-start justify-between">
+            <div
+              class="mb-6 w-full rounded-xl bg-white p-8"
+              x-data="{ open: false }"
+            >
+              <div
+                class="flex cursor-pointer items-start justify-between"
+                x-on:click.prevent="open = !open"
+              >
                 <div class="text-xl font-bold">
                   How can I contribute to Flowspark?
                 </div>
                 <div
                   class="relative ml-10 mt-1 flex h-5 w-5 items-center justify-center"
                 >
-                  <div class="absolute h-5 w-0.5 bg-[#0b0b1f]"></div>
+                  <div
+                    class="absolute h-5 w-0.5 bg-[#0b0b1f] transition-transform"
+                    x-bind:class="open ? 'transform rotate-90' : ''"
+                  ></div>
                   <div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
                 </div>
               </div>
-              <div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+              <div
+                class="w-full max-w-[640px] pt-4 lg:max-w-[960px]"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="transform translate-y--10 opacity-0"
+                x-transition:enter-end="transform translate-y-0 opacity-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="transform translate-y-0 opacity-100"
+                x-transition:leave-end="transform translate-y--10 opacity-0"
+              >
                 <p class="tracking-[0.2px]">
                   Pellentesque in nisi aliquet, pellentesque purus eget,
                   imperdiet turpis. Fusce at enim quis neque viverra convallis.
@@ -878,19 +968,37 @@
                 </p>
               </div>
             </div>
-            <div class="mb-6 w-full rounded-xl bg-white p-8">
-              <div class="flex cursor-pointer items-start justify-between">
+            <div
+              class="mb-6 w-full rounded-xl bg-white p-8"
+              x-data="{ open: false }"
+            >
+              <div
+                class="flex cursor-pointer items-start justify-between"
+                x-on:click.prevent="open = !open"
+              >
                 <div class="text-xl font-bold">
                   How can I contribute to Flowspark?
                 </div>
                 <div
                   class="relative ml-10 mt-1 flex h-5 w-5 items-center justify-center"
                 >
-                  <div class="absolute h-5 w-0.5 bg-[#0b0b1f]"></div>
+                  <div
+                    class="absolute h-5 w-0.5 bg-[#0b0b1f] transition-transform"
+                    x-bind:class="open ? 'transform rotate-90' : ''"
+                  ></div>
                   <div class="h-0.5 w-5 bg-[#0b0b1f]"></div>
                 </div>
               </div>
-              <div class="w-full max-w-[640px] pt-4 lg:max-w-[960px]">
+              <div
+                class="w-full max-w-[640px] pt-4 lg:max-w-[960px]"
+                x-show="open"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="transform translate-y--10 opacity-0"
+                x-transition:enter-end="transform translate-y-0 opacity-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="transform translate-y-0 opacity-100"
+                x-transition:leave-end="transform translate-y--10 opacity-0"
+              >
                 <p class="tracking-[0.2px]">
                   Pellentesque in nisi aliquet, pellentesque purus eget,
                   imperdiet turpis. Fusce at enim quis neque viverra convallis.

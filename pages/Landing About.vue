@@ -144,7 +144,7 @@
               >
               <a
                 href="https://tailwind-css-template-neo.vercel.app/Landing%20Blog"
-                class="font-inter rounded-lg pb-8 hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
+                class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
                 >Blog</a
               >
 
