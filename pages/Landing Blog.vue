@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-hidden">
-     <!-- Navbar Dropdown 1 row -->
+    <!-- Navbar Dropdown 1 row -->
     <section>
       <div class="h-auto w-screen bg-black text-white">
         <!-- NAVBAR -->
@@ -186,7 +186,9 @@
                   x-transition:leave-end="opacity-0 translate-y-10"
                 >
                   <!-- ITEM -->
-                  <a href="#">
+                  <a
+                    href="https://tailwind-css-template-neo.vercel.app/Landing%20Home"
+                  >
                     <!-- TEXT -->
                     <h2 class="font-inter text-lg font-medium">Landing Home</h2>
                   </a>
