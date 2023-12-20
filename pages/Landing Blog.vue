@@ -1,12 +1,12 @@
 <template>
   <div class="overflow-hidden">
-    <!-- Navbar Dropdown 1 row -->
+     <!-- Navbar Dropdown 1 row -->
     <section>
       <div class="h-auto w-screen bg-black text-white">
         <!-- NAVBAR -->
         <nav
           class="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0"
-          x-data="{isOpen: false, menuOne:false}"
+          x-data="{isOpen: false, menuOne:false, menuHome:false }"
         >
           <!-- CONTAINER -->
           <div
@@ -131,6 +131,7 @@
                   </a>
                 </div>
               </div>
+
               <a
                 href="https://tailspark.co/templates"
                 target="_blank"
@@ -153,6 +154,62 @@
                 class="font-inter rounded-lg pb-8 hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
                 >About</a
               >
+              <!--MenuHome -->
+              <div class="relative flex flex-col">
+                <a
+                  x-on:click.prevent="menuHome = !menuHome"
+                  href="#"
+                  class="flex flex-row rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
+                  x-bind:class="menuHome ? 'text-[#c9fd02]' : 'text-white'"
+                >
+                  Home
+                  <svg
+                    x-bind:class="menuHome ? 'rotate-180' : 'rotate-0' "
+                    class="fill-current transition"
+                    style="width: 24px; height: 24px"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                    />
+                  </svg>
+                </a>
+                <div
+                  class="z-50 flex gap-5 w-full flex-col rounded-lg bg-[#181818] p-5 lg:absolute lg:top-20 lg:w-[200px] lg:flex-wrap lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)]"
+                  x-show="menuHome"
+                  x-on:click.outside="menuHome = false"
+                  x-transition:enter="transition ease-out duration-200"
+                  x-transition:enter-start="opacity-0 translate-y-10"
+                  x-transition:enter-end="opacity-100 translate-y-0"
+                  x-transition:leave="transition ease-in duration-200"
+                  x-transition:leave-start="opacity-100 translate-y-0"
+                  x-transition:leave-end="opacity-0 translate-y-10"
+                >
+                  <!-- ITEM -->
+                  <a href="#">
+                    <!-- TEXT -->
+                    <h2 class="font-inter text-lg font-medium">Landing Home</h2>
+                  </a>
+                  <!-- ITEM -->
+                  <a
+                    href="https://tailwind-css-template-neo.vercel.app/Landing%20Home2"
+                  >
+                    <!-- TEXT -->
+                    <h2 class="font-inter text-lg font-medium">
+                      Landing Home 2
+                    </h2>
+                  </a>
+                  <!-- ITEM -->
+                  <a
+                    href="https://tailwind-css-template-neo.vercel.app/Landing%20Home3"
+                  >
+                    <!-- TEXT -->
+                    <h2 class="font-inter text-lg font-medium">
+                      Landing Home 3
+                    </h2>
+                  </a>
+                </div>
+              </div>
             </div>
             <!-- MENU CONTENT 2 -->
             <div
