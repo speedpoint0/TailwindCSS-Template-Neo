@@ -133,12 +133,6 @@
               </div>
 
               <a
-                href="https://tailspark.co/templates"
-                target="_blank"
-                class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
-                >Templates</a
-              >
-              <a
                 href="https://tailwind-css-template-neo.vercel.app/Landing%20Pricing"
                 class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
                 >Pricing</a
@@ -151,7 +145,7 @@
 
               <a
                 href="https://tailwind-css-template-neo.vercel.app/Landing%20About"
-                class="font-inter rounded-lg pb-8 hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
+                class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
                 >About</a
               >
               <!--MenuHome -->
@@ -159,7 +153,7 @@
                 <a
                   x-on:click.prevent="menuHome = !menuHome"
                   href="#"
-                  class="flex flex-row rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
+                  class="flex flex-row pb-8 lg:pb-0 rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
                   x-bind:class="menuHome ? 'text-[#c9fd02]' : 'text-white'"
                 >
                   Home
@@ -175,7 +169,7 @@
                   </svg>
                 </a>
                 <div
-                  class="z-50 flex gap-5 w-full flex-col rounded-lg bg-[#181818] p-5 lg:absolute lg:top-20 lg:w-[200px] lg:flex-wrap lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)]"
+                  class="lg:px-75 z-50 flex w-full flex-col rounded-lg bg-[#181818] px-5 py-5 lg:absolute lg:-right-20 lg:top-20 lg:w-[800px] lg:flex-row lg:flex-wrap lg:py-7 lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)] xl:w-[950px]"
                   x-show="menuHome"
                   x-on:click.outside="menuHome = false"
                   x-transition:enter="transition ease-out duration-200"
@@ -187,28 +181,74 @@
                 >
                   <!-- ITEM -->
                   <a
+                    class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
                     href="https://tailwind-css-template-neo.vercel.app/Landing%20Home"
                   >
+                    <!-- ICON -->
+                    <div class="relative">
+                      <img
+                        class="w-[40px]"
+                        src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+                        alt=""
+                      />
+                    </div>
                     <!-- TEXT -->
-                    <h2 class="font-inter text-lg font-medium">Landing Home</h2>
+                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium">
+                      Landing Home
+                    </h2>
+                    <p
+                      class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+                    >
+                      Get a better understanding of where your traffic is coming
+                      from
+                    </p>
                   </a>
                   <!-- ITEM -->
                   <a
+                    class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
                     href="https://tailwind-css-template-neo.vercel.app/Landing%20Home2"
                   >
+                    <!-- ICON -->
+                    <div class="relative">
+                      <img
+                        class="w-[40px]"
+                        src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+                        alt=""
+                      />
+                    </div>
                     <!-- TEXT -->
-                    <h2 class="font-inter text-lg font-medium">
+                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium">
                       Landing Home 2
                     </h2>
+                    <p
+                      class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+                    >
+                      Speak directly to your customers in a more meaningful way
+                    </p>
                   </a>
                   <!-- ITEM -->
                   <a
+                    class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
                     href="https://tailwind-css-template-neo.vercel.app/Landing%20Home3"
                   >
+                    <!-- ICON -->
+                    <div class="relative">
+                      <img
+                        class="w-[40px]"
+                        src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+                        alt=""
+                      />
+                    </div>
                     <!-- TEXT -->
-                    <h2 class="font-inter text-lg font-medium">
+                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium">
                       Landing Home 3
                     </h2>
+                    <p
+                      class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+                    >
+                      Build strategic funnels that will drive your customers to
+                      convert
+                    </p>
                   </a>
                 </div>
               </div>
@@ -271,11 +311,7 @@
         <!-- Component -->
         <div class="flex flex-col items-center justify-start">
           <!-- Heading Content -->
-          <div
-            class="mx-auto mb-8 max-w-3xl text-center md:mb-12 lg:mb-16"
-            data-aos="fade-up"
-            data-aos-duration="900"
-          >
+          <div class="mx-auto mb-8 max-w-3xl text-center md:mb-12 lg:mb-16">
             <h2
               class="mb-4 mt-6 text-3xl font-extrabold text-white md:text-5xl"
             >
