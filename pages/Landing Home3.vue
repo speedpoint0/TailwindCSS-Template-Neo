@@ -1,301 +1,294 @@
 <template>
-  <div class="overflow-hidden">
+  <div class="relative">
     <!-- Navbar Dropdown 1 row -->
-    <section>
-      <div class="h-auto w-screen bg-black text-white">
-        <!-- NAVBAR -->
-        <nav
-          class="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0"
-          x-data="{isOpen: false, menuOne:false, menuHome:false }"
+    <nav
+      class="font-inter mx-auto h-auto w-full lg:sticky top-0 z-20 bg-[#000]"
+      x-data="{isOpen: false, menuOne:false, menuHome:false }"
+    >
+      <!-- CONTAINER -->
+      <div
+        class="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20"
+      >
+        <!-- SVG LOGO - YOU CAN REPLACE THIS -->
+        <a href="https://tailwind-css-template-neo.vercel.app/Landing%20Home">
+          <img
+            src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26c_%5BA%5D--Navbar%20Brand.png"
+            alt=""
+            class="inline-block max-h-6"
+          />
+        </a>
+        <!-- MENU CONTENT 1 -->
+        <div
+          class="mt-14 flex flex-col space-y-8 lg:mt-0 lg:flex lg:flex-row lg:space-x-1 lg:space-y-0"
+          x-bind:class="isOpen ? 'show' : 'hidden'"
         >
-          <!-- CONTAINER -->
-          <div
-            class="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20"
-          >
-            <!-- SVG LOGO - YOU CAN REPLACE THIS -->
+          <!-- DROPDOWN -->
+          <div class="relative flex flex-col">
             <a
-              href="https://tailwind-css-template-neo.vercel.app/Landing%20Home"
-            >
-              <img
-                src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26c_%5BA%5D--Navbar%20Brand.png"
-                alt=""
-                class="inline-block max-h-6"
-              />
-            </a>
-            <!-- MENU CONTENT 1 -->
-            <div
-              class="mt-14 flex flex-col space-y-8 lg:mt-0 lg:flex lg:flex-row lg:space-x-1 lg:space-y-0"
-              x-bind:class="isOpen ? 'show' : 'hidden'"
-            >
-              <!-- DROPDOWN -->
-              <div class="relative flex flex-col">
-                <a
-                  x-on:click.prevent="menuOne = !menuOne"
-                  href="#"
-                  class="flex flex-row rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
-                  x-bind:class="menuOne ? ' text-[#c9fd02] ' : 'text-white  ' "
-                  >Component
-                  <svg
-                    x-bind:class="menuOne ? 'rotate-180' : 'rotate-0' "
-                    class="fill-current transition"
-                    style="width: 24px; height: 24px"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
-                    />
-                  </svg>
-                </a>
-                <!-- DROP DOWN MENU ONE -->
-                <div
-                  class="lg:px-75 z-50 flex w-full flex-col rounded-lg bg-[#181818] px-5 py-5 lg:absolute lg:top-20 lg:w-[800px] lg:flex-row lg:flex-wrap lg:py-7 lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)] xl:w-[950px]"
-                  x-show="menuOne"
-                  x-on:click.outside="menuOne = false"
-                  x-transition:enter="transition ease-out duration-200"
-                  x-transition:enter-start="opacity-0 translate-y-10"
-                  x-transition:enter-end="opacity-100 translate-y-0"
-                  x-transition:leave="transition ease-in duration-200"
-                  x-transition:leave-start="opacity-100 translate-y-0"
-                  x-transition:leave-end="opacity-0 translate-y-10"
-                >
-                  <!-- ITEM -->
-                  <a
-                    class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
-                    href="#"
-                  >
-                    <!-- ICON -->
-                    <div class="relative">
-                      <img
-                        class="w-[40px]"
-                        src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
-                        alt=""
-                      />
-                    </div>
-                    <!-- TEXT -->
-                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium">
-                      Analytics
-                    </h2>
-                    <p
-                      class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
-                    >
-                      Get a better understanding of where your traffic is coming
-                      from
-                    </p>
-                  </a>
-                  <!-- ITEM -->
-                  <a
-                    class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
-                    href="#"
-                  >
-                    <!-- ICON -->
-                    <div class="relative">
-                      <img
-                        class="w-[40px]"
-                        src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
-                        alt=""
-                      />
-                    </div>
-                    <!-- TEXT -->
-                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium">
-                      Engagement
-                    </h2>
-                    <p
-                      class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
-                    >
-                      Speak directly to your customers in a more meaningful way
-                    </p>
-                  </a>
-                  <!-- ITEM -->
-                  <a
-                    class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
-                    href="#"
-                  >
-                    <!-- ICON -->
-                    <div class="relative">
-                      <img
-                        class="w-[40px]"
-                        src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
-                        alt=""
-                      />
-                    </div>
-                    <!-- TEXT -->
-                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium">
-                      Automations
-                    </h2>
-                    <p
-                      class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
-                    >
-                      Build strategic funnels that will drive your customers to
-                      convert
-                    </p>
-                  </a>
-                </div>
-              </div>
-
-              <a
-                href="https://tailwind-css-template-neo.vercel.app/Landing%20Pricing"
-                class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
-                >Pricing</a
-              >
-              <a
-                href="https://tailwind-css-template-neo.vercel.app/Landing%20Blog"
-                class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
-                >Blog</a
-              >
-
-              <a
-                href="https://tailwind-css-template-neo.vercel.app/Landing%20About"
-                class="font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
-                >About</a
-              >
-              <!--MenuHome -->
-              <div class="relative flex flex-col">
-                <a
-                  x-on:click.prevent="menuHome = !menuHome"
-                  href="#"
-                  class="flex flex-row pb-8 lg:pb-0 rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
-                  x-bind:class="menuHome ? 'text-[#c9fd02]' : 'text-white'"
-                >
-                  Home
-                  <svg
-                    x-bind:class="menuHome ? 'rotate-180' : 'rotate-0' "
-                    class="fill-current transition"
-                    style="width: 24px; height: 24px"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
-                    />
-                  </svg>
-                </a>
-                <div
-                  class="lg:px-75 z-50 flex w-full flex-col rounded-lg bg-[#181818] px-5 py-5 lg:absolute lg:-right-20 lg:top-20 lg:w-[800px] lg:flex-row lg:flex-wrap lg:py-7 lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)] xl:w-[950px]"
-                  x-show="menuHome"
-                  x-on:click.outside="menuHome = false"
-                  x-transition:enter="transition ease-out duration-200"
-                  x-transition:enter-start="opacity-0 translate-y-10"
-                  x-transition:enter-end="opacity-100 translate-y-0"
-                  x-transition:leave="transition ease-in duration-200"
-                  x-transition:leave-start="opacity-100 translate-y-0"
-                  x-transition:leave-end="opacity-0 translate-y-10"
-                >
-                  <!-- ITEM -->
-                  <a
-                    class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
-                    href="https://tailwind-css-template-neo.vercel.app/Landing%20Home"
-                  >
-                    <!-- ICON -->
-                    <div class="relative">
-                      <img
-                        class="w-[40px]"
-                        src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
-                        alt=""
-                      />
-                    </div>
-                    <!-- TEXT -->
-                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium">
-                      Landing Home
-                    </h2>
-                    <p
-                      class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
-                    >
-                      Get a better understanding of where your traffic is coming
-                      from
-                    </p>
-                  </a>
-                  <!-- ITEM -->
-                  <a
-                    class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
-                    href="https://tailwind-css-template-neo.vercel.app/Landing%20Home2"
-                  >
-                    <!-- ICON -->
-                    <div class="relative">
-                      <img
-                        class="w-[40px]"
-                        src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
-                        alt=""
-                      />
-                    </div>
-                    <!-- TEXT -->
-                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium">
-                      Landing Home 2
-                    </h2>
-                    <p
-                      class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
-                    >
-                      Speak directly to your customers in a more meaningful way
-                    </p>
-                  </a>
-                  <!-- ITEM -->
-                  <a
-                    class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
-                    href="https://tailwind-css-template-neo.vercel.app/Landing%20Home3"
-                  >
-                    <!-- ICON -->
-                    <div class="relative">
-                      <img
-                        class="w-[40px]"
-                        src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
-                        alt=""
-                      />
-                    </div>
-                    <!-- TEXT -->
-                    <h2 class="font-inter mb-1 mt-5 text-lg font-medium">
-                      Landing Home 3
-                    </h2>
-                    <p
-                      class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
-                    >
-                      Build strategic funnels that will drive your customers to
-                      convert
-                    </p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!-- MENU CONTENT 2 -->
-            <div
-              class="flex flex-col space-y-8 lg:flex lg:flex-row lg:space-x-3 lg:space-y-0"
-              x-bind:class="isOpen ? 'show' : 'hidden'"
-            >
-              <a
-                href="https://flowspark.co/design"
-                target="_blank"
-                class="inline-block rounded-full bg-white px-5 py-3 text-center font-bold text-black transition hover:border-black hover:bg-[#c9fd02]"
-                >Get Custom Designs</a
-              >
-            </div>
-            <!-- BURGER MENU -->
-            <a
+              x-on:click.prevent="menuOne = !menuOne"
               href="#"
-              class="absolute right-5 lg:hidden"
-              x-on:click.prevent="isOpen = !isOpen"
-            >
+              class="text-white flex flex-row rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
+              x-bind:class="menuOne ? ' text-[#c9fd02] ' : 'text-white  ' "
+              >Component
               <svg
-                width="1.25rem"
-                height="1rem"
-                viewBox="0 0 20 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                x-bind:class="menuOne ? 'rotate-180' : 'rotate-0' "
+                class="fill-current transition"
+                style="width: 24px; height: 24px"
+                viewBox="0 0 24 24"
               >
                 <path
-                  d="M19 7H1C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9H19C19.5523 9 20 8.55228 20 8C20 7.44772 19.5523 7 19 7Z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M19 0H7C6.44772 0 6 0.447715 6 1C6 1.55228 6.44772 2 7 2H19C19.5523 2 20 1.55228 20 1C20 0.447715 19.5523 0 19 0Z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M19 14H11C10.4477 14 10 14.4477 10 15C10 15.5523 10.4477 16 11 16H19C19.5523 16 20 15.5523 20 15C20 14.4477 19.5523 14 19 14Z"
-                  fill="currentColor"
-                ></path>
+                  d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                />
               </svg>
             </a>
+            <!-- DROP DOWN MENU ONE -->
+            <div
+              class="lg:px-75 z-50 flex w-full flex-col rounded-lg bg-[#181818] px-5 py-5 lg:absolute lg:top-20 lg:w-[800px] lg:flex-row lg:flex-wrap lg:py-7 lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)] xl:w-[950px]"
+              x-show="menuOne"
+              x-on:click.outside="menuOne = false"
+              x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0 translate-y-10"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-200"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 translate-y-10"
+            >
+              <!-- ITEM -->
+              <a
+                class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
+                href="#"
+              >
+                <!-- ICON -->
+                <div class="relative">
+                  <img
+                    class="w-[40px]"
+                    src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+                    alt=""
+                  />
+                </div>
+                <!-- TEXT -->
+                <h2 class="text-white font-inter mb-1 mt-5 text-lg font-medium">
+                  Analytics
+                </h2>
+                <p
+                  class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+                >
+                  Get a better understanding of where your traffic is coming
+                  from
+                </p>
+              </a>
+              <!-- ITEM -->
+              <a
+                class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
+                href="#"
+              >
+                <!-- ICON -->
+                <div class="relative">
+                  <img
+                    class="w-[40px]"
+                    src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+                    alt=""
+                  />
+                </div>
+                <!-- TEXT -->
+                <h2 class="text-white font-inter mb-1 mt-5 text-lg font-medium">
+                  Engagement
+                </h2>
+                <p
+                  class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+                >
+                  Speak directly to your customers in a more meaningful way
+                </p>
+              </a>
+              <!-- ITEM -->
+              <a
+                class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
+                href="#"
+              >
+                <!-- ICON -->
+                <div class="relative">
+                  <img
+                    class="w-[40px]"
+                    src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+                    alt=""
+                  />
+                </div>
+                <!-- TEXT -->
+                <h2 class="text-white font-inter mb-1 mt-5 text-lg font-medium">
+                  Automations
+                </h2>
+                <p
+                  class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+                >
+                  Build strategic funnels that will drive your customers to
+                  convert
+                </p>
+              </a>
+            </div>
           </div>
-        </nav>
+
+          <a
+            href="https://tailwind-css-template-neo.vercel.app/Landing%20Pricing"
+            class="text-white font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
+            >Pricing</a
+          >
+          <a
+            href="https://tailwind-css-template-neo.vercel.app/Landing%20Blog"
+            class="text-white font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
+            >Blog</a
+          >
+
+          <a
+            href="https://tailwind-css-template-neo.vercel.app/Landing%20About"
+            class="text-white font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
+            >About</a
+          >
+          <!--MenuHome -->
+          <div class="relative flex flex-col">
+            <a
+              x-on:click.prevent="menuHome = !menuHome"
+              href="#"
+              class="text-white flex flex-row pb-8 lg:pb-0 rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
+              x-bind:class="menuHome ? 'text-[#c9fd02]' : 'text-white'"
+            >
+              Home
+              <svg
+                x-bind:class="menuHome ? 'rotate-180' : 'rotate-0' "
+                class="fill-current transition"
+                style="width: 24px; height: 24px"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                />
+              </svg>
+            </a>
+            <div
+              class="lg:px-75 z-50 flex w-full flex-col rounded-lg bg-[#181818] px-5 py-5 lg:absolute lg:-right-20 lg:top-20 lg:w-[800px] lg:flex-row lg:flex-wrap lg:py-7 lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)] xl:w-[950px]"
+              x-show="menuHome"
+              x-on:click.outside="menuHome = false"
+              x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0 translate-y-10"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-200"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 translate-y-10"
+            >
+              <!-- ITEM -->
+              <a
+                class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
+                href="https://tailwind-css-template-neo.vercel.app/Landing%20Home"
+              >
+                <!-- ICON -->
+                <div class="relative">
+                  <img
+                    class="w-[40px]"
+                    src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+                    alt=""
+                  />
+                </div>
+                <!-- TEXT -->
+                <h2 class="text-white font-inter mb-1 mt-5 text-lg font-medium">
+                  Landing Home
+                </h2>
+                <p
+                  class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+                >
+                  Get a better understanding of where your traffic is coming
+                  from
+                </p>
+              </a>
+              <!-- ITEM -->
+              <a
+                class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
+                href="https://tailwind-css-template-neo.vercel.app/Landing%20Home2"
+              >
+                <!-- ICON -->
+                <div class="relative">
+                  <img
+                    class="w-[40px]"
+                    src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+                    alt=""
+                  />
+                </div>
+                <!-- TEXT -->
+                <h2 class="text-white font-inter mb-1 mt-5 text-lg font-medium">
+                  Landing Home 2
+                </h2>
+                <p
+                  class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+                >
+                  Speak directly to your customers in a more meaningful way
+                </p>
+              </a>
+              <!-- ITEM -->
+              <a
+                class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
+                href="https://tailwind-css-template-neo.vercel.app/Landing%20Home3"
+              >
+                <!-- ICON -->
+                <div class="relative">
+                  <img
+                    class="w-[40px]"
+                    src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
+                    alt=""
+                  />
+                </div>
+                <!-- TEXT -->
+                <h2 class="text-white font-inter mb-1 mt-5 text-lg font-medium">
+                  Landing Home 3
+                </h2>
+                <p
+                  class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
+                >
+                  Build strategic funnels that will drive your customers to
+                  convert
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- MENU CONTENT 2 -->
+        <div
+          class="flex flex-col space-y-8 lg:flex lg:flex-row lg:space-x-3 lg:space-y-0"
+          x-bind:class="isOpen ? 'show' : 'hidden'"
+        >
+          <a
+            href="https://flowspark.co/design"
+            target="_blank"
+            class="inline-block rounded-full bg-white px-5 py-3 text-center font-bold text-black transition hover:border-black hover:bg-[#c9fd02]"
+            >Get Custom Designs</a
+          >
+        </div>
+        <!-- BURGER MENU -->
+        <a
+          href="#"
+          class="absolute right-5 lg:hidden"
+          x-on:click.prevent="isOpen = !isOpen"
+        >
+          <svg
+            width="1.25rem"
+            height="1rem"
+            viewBox="0 0 20 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 7H1C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9H19C19.5523 9 20 8.55228 20 8C20 7.44772 19.5523 7 19 7Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M19 0H7C6.44772 0 6 0.447715 6 1C6 1.55228 6.44772 2 7 2H19C19.5523 2 20 1.55228 20 1C20 0.447715 19.5523 0 19 0Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M19 14H11C10.4477 14 10 14.4477 10 15C10 15.5523 10.4477 16 11 16H19C19.5523 16 20 15.5523 20 15C20 14.4477 19.5523 14 19 14Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </a>
       </div>
-    </section>
+    </nav>
 
     <section>
       <!-- Container -->
