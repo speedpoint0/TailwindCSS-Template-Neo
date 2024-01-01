@@ -278,14 +278,14 @@
 					<!-- Image Div -->
 					<div
 						class="flex flex-col items-center justify-center rounded-xl bg-[#f7f6f2] p-6"
+						data-aos="fade-up"
+						data-aos-duration="900"
+						data-aos-delay="500"
 					>
 						<img
 							src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a26f_Rectangle%2086.png"
 							alt="Features Image"
 							class="mx-auto inline-block h-full w-full max-w-[640px] rounded-2xl object-cover"
-							data-aos="fade-up"
-							data-aos-duration="900"
-							data-aos-delay="500"
 						/>
 					</div>
 					<!-- Content -->
