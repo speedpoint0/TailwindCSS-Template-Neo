@@ -22,133 +22,12 @@
 					class="mt-14 flex flex-col space-y-8 lg:mt-0 lg:flex lg:flex-row lg:space-x-1 lg:space-y-0"
 					x-bind:class="isOpen ? 'show' : 'hidden'"
 				>
-					<!-- DROPDOWN -->
-					<div class="relative flex flex-col">
-						<a
-							x-on:click.prevent="menuOne = !menuOne"
-							href="#"
-							class="text-white flex flex-row rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
-							x-bind:class="menuOne ? ' text-[#c9fd02] ' : 'text-white  ' "
-							>Component
-							<svg
-								x-bind:class="menuOne ? 'rotate-180' : 'rotate-0' "
-								class="fill-current transition"
-								style="width: 24px; height: 24px"
-								viewBox="0 0 24 24"
-							>
-								<path
-									d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
-								/>
-							</svg>
-						</a>
-						<!-- DROP DOWN MENU ONE -->
-						<div
-							class="lg:px-75 z-50 flex w-full flex-col rounded-lg bg-[#181818] px-5 py-5 lg:absolute lg:top-20 lg:w-[800px] lg:flex-row lg:flex-wrap lg:py-7 lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)] xl:w-[950px]"
-							x-show="menuOne"
-							x-on:click.outside="menuOne = false"
-							x-transition:enter="transition ease-out duration-200"
-							x-transition:enter-start="opacity-0 translate-y-10"
-							x-transition:enter-end="opacity-100 translate-y-0"
-							x-transition:leave="transition ease-in duration-200"
-							x-transition:leave-start="opacity-100 translate-y-0"
-							x-transition:leave-end="opacity-0 translate-y-10"
-						>
-							<!-- ITEM -->
-							<a
-								class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
-								href="#"
-							>
-								<!-- ICON -->
-								<div class="relative">
-									<img
-										class="w-[40px]"
-										src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
-										alt=""
-									/>
-								</div>
-								<!-- TEXT -->
-								<h2 class="text-white font-inter mb-1 mt-5 text-lg font-medium">
-									Analytics
-								</h2>
-								<p
-									class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
-								>
-									Get a better understanding of where your traffic is coming
-									from
-								</p>
-							</a>
-							<!-- ITEM -->
-							<a
-								class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
-								href="#"
-							>
-								<!-- ICON -->
-								<div class="relative">
-									<img
-										class="w-[40px]"
-										src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
-										alt=""
-									/>
-								</div>
-								<!-- TEXT -->
-								<h2 class="text-white font-inter mb-1 mt-5 text-lg font-medium">
-									Engagement
-								</h2>
-								<p
-									class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
-								>
-									Speak directly to your customers in a more meaningful way
-								</p>
-							</a>
-							<!-- ITEM -->
-							<a
-								class="flex grow flex-col rounded-lg px-5 py-5 lg:basis-[248px] xl:px-8"
-								href="#"
-							>
-								<!-- ICON -->
-								<div class="relative">
-									<img
-										class="w-[40px]"
-										src="https://uploads-ssl.webflow.com/64745e0b9655a141ddb0db54/64745e0b9655a141ddb0db35_Ellipse%2030.svg"
-										alt=""
-									/>
-								</div>
-								<!-- TEXT -->
-								<h2 class="text-white font-inter mb-1 mt-5 text-lg font-medium">
-									Automations
-								</h2>
-								<p
-									class="font-inter max-w-[250px] text-[14px] leading-[24px] text-[#636262] lg:max-w-[400px]"
-								>
-									Build strategic funnels that will drive your customers to
-									convert
-								</p>
-							</a>
-						</div>
-					</div>
-
-					<a
-						href="https://tailwind-css-template-neo.vercel.app/Landing%20Pricing"
-						class="text-white font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
-						>Pricing</a
-					>
-					<a
-						href="https://tailwind-css-template-neo.vercel.app/Landing%20Blog"
-						class="text-white font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
-						>Blog</a
-					>
-
-					<a
-						href="https://tailwind-css-template-neo.vercel.app/Landing%20About"
-						class="text-white font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
-						>About</a
-					>
 					<!--MenuHome -->
 					<div class="relative flex flex-col">
 						<a
 							x-on:click.prevent="menuHome = !menuHome"
 							href="#"
-							class="text-white flex flex-row pb-8 lg:pb-0 rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
+							class="text-white flex flex-row rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
 							x-bind:class="menuHome ? 'text-[#c9fd02]' : 'text-white'"
 						>
 							Home
@@ -164,7 +43,7 @@
 							</svg>
 						</a>
 						<div
-							class="lg:px-75 z-50 flex w-full flex-col rounded-lg bg-[#181818] px-5 py-5 lg:absolute lg:-right-20 lg:top-20 lg:w-[800px] lg:flex-row lg:flex-wrap lg:py-7 lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)] xl:w-[950px]"
+							class="lg:px-75 z-50 flex w-full flex-col rounded-lg bg-[#181818] px-5 py-5 lg:absolute lg:top-20 lg:w-[800px] lg:flex-row lg:flex-wrap lg:py-7 lg:shadow-[0_16px_64px_-15px_rgba(45,96,173,0.15)] xl:w-[950px]"
 							x-show="menuHome"
 							x-on:click.outside="menuHome = false"
 							x-transition:enter="transition ease-out duration-200"
@@ -247,6 +126,23 @@
 							</a>
 						</div>
 					</div>
+
+					<a
+						href="https://tailwind-css-template-neo.vercel.app/Landing%20Pricing"
+						class="text-white font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4"
+						>Pricing</a
+					>
+					<a
+						href="https://tailwind-css-template-neo.vercel.app/Landing%20Blog"
+						class="text-white font-inter rounded-lg hover:text-[#c9fd02] lg:px-6 lg:py-4 lg:pb-0"
+						>Blog</a
+					>
+
+					<a
+						href="https://tailwind-css-template-neo.vercel.app/Landing%20About"
+						class="text-white font-inter rounded-lg pb-8 lg:pb-0 hover:text-[#c9fd02] lg:px-6 lg:py-4"
+						>About</a
+					>
 				</div>
 				<!-- MENU CONTENT 2 -->
 				<div
@@ -263,7 +159,7 @@
 				<!-- BURGER MENU -->
 				<a
 					href="#"
-					class="absolute right-5 lg:hidden"
+					class="absolute right-5 lg:hidden text-white"
 					x-on:click.prevent="isOpen = !isOpen"
 				>
 					<svg
@@ -289,6 +185,7 @@
 				</a>
 			</div>
 		</nav>
+		>>>>>>> a53c0059ef24e69877acc84de947c6837e1b4a0c
 
 		<!-- Blog -->
 		<section>
